@@ -1,0 +1,15 @@
+import re
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        cleaned = re.sub(r'[^a-zA-Z0-9]', '', s)
+        p = cleaned.lower()
+        l = len(p)
+        j = l - 1 
+        i = 0
+        while i < j:
+            if p[i] != p[j]:
+                return False
+            i += 1           
+            j -= 1
+
+        return True      
